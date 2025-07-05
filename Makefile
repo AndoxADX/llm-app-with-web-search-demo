@@ -3,7 +3,7 @@ SHELL :=/bin/bash
 .PHONY: clean check setup
 .DEFAULT_GOAL=help
 VENV_DIR = .venv
-PYTHON_VERSION = python3.11
+PYTHON_VERSION = python3
 
 check: # Ruff check
 	@ruff check .
@@ -20,7 +20,7 @@ clean: # Clean temporary files
 	@find . -name '*.egg-info' -type d -exec rm -r {} +
 
 run: # Run the application
-	@streamlit run app.py
+	@source $(VENV_DIR)/bin/activate && streamlit run app.py
 
 setup: # Initial project setup
 	@echo "Creating virtual env at: $(VENV_DIR)"

@@ -6,3 +6,4 @@ duckduckgo_search==7.3.2
 chromadb==0.6.3
 langchain-community==0.3.17
 ollama==0.4.7
+playwright
